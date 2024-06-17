@@ -1,6 +1,24 @@
 body {
     font-family: sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #3498db;
 }
 
 p {
@@ -9,17 +27,25 @@ p {
 
 button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #3498db;
     color: white;
     border: none;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #3e8e41;
+    background-color: #2980b9;
 }
 
 #message {
     font-weight: bold;
     color: red;
+    margin-top: 10px;
+}
+
+#numberRange {
+    font-size: smaller;
+    margin-top: 10px;
+    color: #ccc;
 }

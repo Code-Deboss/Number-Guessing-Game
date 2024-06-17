@@ -1,5 +1,6 @@
 const guessInput = document.getElementById('guessInput');
 const message = document.getElementById('message');
+const attemptsLeftSpan = document.getElementById('attemptsLeft');
 let secretNumber = Math.floor(Math.random() * 100) + 1;
 let attemptsLeft = 10;
 
@@ -12,10 +13,12 @@ function checkGuess() {
   }
 
   attemptsLeft--;
+  attemptsLeftSpan.textContent = attemptsLeft;
 
   if (guess === secretNumber) {
     message.textContent = 'Congratulations! You guessed the number!';
     guessInput.disabled = true; // Disable input after win
+    playWinSound(); // New function to add sound effect
   } else if (guess > secretNumber) {
     message.textContent = 'Too high! Try again.';
   } else {
@@ -30,4 +33,20 @@ function checkGuess() {
   }
 
   guessInput.value = ''; // Clear input field after each guess
+}
+
+function newGame() {
+  secretNumber = Math.floor(Math.random() * 100) + 1;
+  attemptsLeft = 10;
+  attemptsLeftSpan.textContent = attemptsLeft;
+  message.textContent = '';
+  guessInput.disabled = false; // Enable input for new game
+  guessInput.value = ''; // Clear input field
+}
+
+function playWinSound() {
+  const winSound = new Howl({
+    src: ['audio/win.mp3'] // Path to your win sound effect
+  });
+  winSound.play();
 }
