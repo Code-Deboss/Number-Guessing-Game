@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Number Guesser Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <h1>Number Guesser</h1>
+    <p>Guess a number between 1 and 100 (You have 10 attempts left)</p>
+    <input type="number" id="guessInput" placeholder="Enter your guess">
+    <button onclick="checkGuess()">Guess</button>
+    <p id="message"></p>
+    <script src="script.js"></script>
 </body>
+
 </html>
